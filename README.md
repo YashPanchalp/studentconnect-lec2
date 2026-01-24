@@ -7,3 +7,6 @@ AWS S3 (static website)
 GitHub Pages (optional)
 
 https://first-deployment-yash.s3.eu-north-1.amazonaws.com/index.html#
+
+<img width="1918" height="490" alt="Screenshot 2026-01-24 170957" src="https://github.com/user-attachments/assets/5e73c889-a139-4114-a751-76243e77821e" />
+
