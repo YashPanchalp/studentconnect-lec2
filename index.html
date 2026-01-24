@@ -4,119 +4,214 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Spotify Clone- Web Player: Music for everyone</title>
+    <link rel="icon" href="C:\Users\HELLY\Desktop\Html\logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+
 </head>
-<!--
-    1)COLLEGE INQUIRY FORM
-    2)ACPC IAMGE
-    3)FIRST NAME , LAST NAME
-    4)ACPC ID , PASSWORD
-    5)SELECT GENDER USING THE RADIO
-    6)SELECT CITY AND COLLEGE WITH SELECT DROP BOX
-    7)ASK WHAT YOU WANT TO ENQUIRE ABOUT SELECTED COLLEGE
-    8)SELECT HOW MANY COLLEGES YOU ENQIRE BEFIRE USING RANGE IP
-    9)GIVE TERMS AND CONDIOTONS AND CONTACT DETAILS
-    10)AGREED TO TERMS AND CONDITIONS CHECK BOX
-    11)FINAL SUBMIT BUTTON
-    -->
 
 <body>
-    <!--1) and 2)START WITH TITLE -->
-    <form action="/action">
-        <div style="text-align: center;">
-            <div>
-                <h1>COLLEGE INQUIRY FORM FROM ACPC</h1>
-                <img src="images.jpg" alt="Acpc Logo" height="150px" width="150px">
+    <div class="main">
+        <div class="sidebar">
+            <div class="nav">
+                <div class="nav-option" style="opacity: 1;">
+                    <i class="fa-solid fa-house"></i>
+                    <a href="#">Home</a>
+                </div>
+                <div class="nav-option">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <a href="#">Search</a>
+                </div>
             </div>
-            <BR>
+            <div class="library">
+                <div class="options">
+                    <div class="lib-options nav-option">
+                        <img src="library_icon.png">
+                        <a href="#">Your library</a>
+                    </div>
+                    <div class="icons">
+                        <i class="fa-solid fa-plus"></i>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+                <div class="lib_box">
+                    <div class="box">
+                        <p class="box-p1">Create your first playlist</p>
+                        <p class="box-p2">It's easy, we will help you!</p>
+                        <button class="badge">Create playlist</button>
+                    </div>
+                    <div class="box b2">
+                        <p class="box-p1">Let's find some poadcast to follow</p>
+                        <p class="box-p2">We'll keep you updated on new episodes</p>
+                        <button class="badge">Browse poadcast</button>
+                    </div>
+                </div>
 
-            <!--3 and 4-->
-            <h4>ENTER YOUR PERSONAL DETAILS</h4>
-            <input type="text" name="f_name" placeholder="First Name">
-            <input type="text" name="l_name" placeholder="Last Name">
-            <input type="text" name="email" placeholder="Enter your Email">
-            <h4>USER ID AND PASSWORD</h4>
-            <input type="text" name="ACPC_id" placeholder="ACPC ID">
-            <input type="password" name="Pass" placeholder="Password"><br><br><br>
-
-            <!--5-->
-            <div>
-                <b>SELECT GENDER:</b>
-                <label for="Male">Male</label>
-                <input type="radio" name="Gender" id="Male" Value="Male">
-                <label for="Female">Female</label>
-                <input type="radio" name="Gender" id="Female" Value="Female">
-
-                <!--6-->
-                <b>&ThickSpace;City :</b>
-                <select name="State" id="State">
-                    <option>Select your City</option>
-                    <option value="ahm">Ahmedabad</option>
-                    <option value="sur">Surat</option>
-                    <option value="raj">Rajkot</option>
-                    <option value="vad">Others</option>
-                </select>
-                <br><br><br>
             </div>
-            <span>
-                <b><u>College </u> :</b>
-                <select name="College" id="College">
-                    <option>Select your Collge to Enqire:</option>
-                    <option value="ld">LDCE Ahmedabad</option>
-                    <option value="vgec">VGEC Ahmedabad</option>
-                    <option value="ddu">DDU Nadiad</option>
-                    <option value="gecg">GEC Gandghinagar</option>
-                    <option value="smat">SMAT Surat</option>
-                </select>
-            </span><br><br>
-
-            <!--7-->
-            <div>
-                <label for="Extraa_info"></label>
-                <textarea name="Extraa_info" rows="3" cols="50" placeholder="What you want to enquire?"></textarea>
-            </div><br><br>
-
-            <!--8-->
-            <div>
-                <label for="clg_no"><b>How Many Colleges Inquired Before :</b></label>
-                <input type="range" name="College Count" id="clg_no" min="0" max="10" sep="1" value="0">
-            </div><br><br>
         </div>
-        <!--9-->
-        <div>
-            <div style="text-align: center;">
-                <h4>*Terms and Conditionds*</h4>
+        <div class="main-content">
+            <div class="sticky-nav">
+                <div class="sticky-nav-icons">
+                    <div class="first-icon">
+                        <img src="backward_icon.png">
+                    </div>
+                    <div class="sec-icon hidden">
+                        <img src="forward_icon.png">
+                    </div>
+                </div>
+                <div class="search-bar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="What do you want to listen?" class="search-area">
+                    <img src="logo.png">
+                </div>
+
+                <div class="sticky-nav-options">
+                    <button class="badge nav-item hidden">Explore Premimum</button>
+                    <button class="badge nav-item dark-badge"><i class="fa-solid fa-circle-down"
+                            style="margin-right: 7px;"></i>Install
+                        App</button>
+                    <div class="user-icon">
+                        <i class="fa-regular fa-user nav-item"></i>
+                    </div>
+                </div>
             </div>
-            <ul>
-                <li>The information provided will be used solely for responding to your inquiry and providing relevant
-                    details about our college, programs, and admission process.</li>
-                <li>By submitting the form, you confirm that all information provided is accurate and up-to-date.
-                    Providing false or misleading information may result in the rejection of your inquiry.</li>
-                <li>By submitting your contact details, you consent to being contacted by the college through email,
-                    phone,
-                    or other communication methods regarding your inquiry.</li>
-                <li>You may opt in to receive future updates, newsletters, and promotional content from the college on
-                    shared email. You can unsubscribe at any time by following the instructions provided in our
-                    communications.</li>
-                <li>For more Details visit :<a href="https://gujacpc.admissions.nic.in/home-8/be-b-tech/">Official
-                        Website</a></li>
-            </ul>
+            <div class="cards">
+                <!-- section 1  -->
+                <!-- card 1 -->
+                <h2>Recently Played</h2>
+                <div class="cards-container">
+                    <div class="card">
+                        <img src="card1img.jpeg" class="card-img">
+                        <img src="player_icon3.png" class="pause-btn">
+                        <p class="card-title">Top 50 - Global</p>
+                        <p class="card-content">Your daily updates of most played tracks...</p>
+                    </div>
+                </div>
+
+                <!-- section2 -->
+
+                <h2 class="card-2-heading">Trending near you</h2>
+                <div class="cards-container">
+                    <!-- card 1  -->
+                    <div class="card">
+                        <img src="card2-1.jpg" class="card-img">
+                        <img src="player_icon3.png" class="pause-btn">
+                        <p class="card-title">Chaava Songs</p>
+                        <p class="card-content">All the songs from chaava movie</p>
+                    </div>
+
+                    <!-- card2 -->
+                    <div class="card">
+                        <img src="card2-2.jpeg" class="card-img">
+                        <img src="player_icon3.png" class="pause-btn">
+                        <p class="card-title">Arijit singh</p>
+                        <p class="card-content">Arijit singh top songs ...</p>
+                    </div>
+                    <!-- card 3 -->
+                    <div class="card">
+                        <img src="card3img.jpeg" class="card-img">
+                        <img src="player_icon3.png" class="pause-btn">
+                        <p class="card-title">Mere pass tum ho</p>
+                        <p class="card-content">Silent ocean music - Lofi mix</p>
+                    </div>
+                    <!-- card 4 -->
+                    <div class="card">
+                        <img src="card4img.jpeg" class="card-img">
+                        <img src="player_icon3.png" class="pause-btn">
+                        <p class="card-title">Naa Ready</p>
+                        <p class="card-content">Leo film songs </p>
+                    </div>
+                </div>
+
+                <!-- section3  -->
+
+                <h2 class="card-2-heading">Featured charts</h2>
+                <div class="cards-container">
+                    <!-- card 1 -->
+                    <div class="card">
+                        <img src="card5img.jpeg" class="card-img">
+                        <img src="player_icon3.png" class="pause-btn">
+                        <p class="card-title">Top songs global</p>
+                        <p class="card-content">The trending and most liked songs all over the wolrd..</p>
+                    </div>
+                    <!-- card 2 -->
+                    <div class="card">
+                        <img src="card6img.jpeg" class="card-img">
+                        <img src="player_icon3.png" class="pause-btn">
+                        <p class="card-title">Top songs India</p>
+                        <p class="card-content">Most liked and listened songs by indian people</p>
+                    </div>
+                    <!-- card 3 -->
+                    <div class="card">
+                        <img src="card1img.jpeg" class="card-img">
+                        <img src="player_icon3.png" class="pause-btn">
+                        <p class="card-title">Top 50 Global</p>
+                        <p class="card-content">Ranked top 50 songs most listened golobally</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="line">
+                    <img src="logo.png" class="lower-logo">
+                    <h1 class="lower">Spotify</h1>
+                    <h4 class="lower lower-2">Keep listening ,Yash</h4>
+                </div>
+            </div>
         </div>
 
-        <!--10-->
-        <div style="text-align: center;">
-            <b>Are you agreed to Terms and Condtions?</b>
-            <label for="T&C">Yes !Contionue </label>
-            <input type="checkbox" name="T&C" checked>
-        </div><br>
+        <div class="music-player">
+            <div class="album">
+                <div class="album-left">
+                    <div class="album-left-image">
+                        <img src="card2-1.jpg">
+                    </div>
+                    <div class="album-left-text">
+                        <h4 class="left-text-upper">Chavva Anthem</h4>
+                        <p class="left-text-lower">A R Rahman</p>
+                    </div>
+                </div>
+                <div class="album-right">
+                    <img src="album_icon1.png">
+                    <img src="album_icon2.png" class="im2">
+                </div>
+            </div>
+            <div class="player">
+                <div class="player-controls">
+                    <img src="player_icon1.png" class="progress-bar-icon">
+                    <img src="player_icon2.png" class="progress-bar-icon">
+                    <img src="player_icon3.png" class="progress-bar-icon pause">
+                    <img src="player_icon4.png" class="progress-bar-icon">
+                    <img src="player_icon5.png" class="progress-bar-icon">
+                </div>
+                <div class="playback-bar">
+                    <span class="current-time">00:00</span>
+                    <input type="range" min="0" max="100" class="progress-bar" step="1">
+                    <spam class="total-time">03:31</spam>
+                </div>
+            </div>
+            <div class="content">
+                <div class="content-left">
+                    <img src="controls_icon1.png" alt="" class="cl-1">
+                    <img src="controld_icon2.png" alt="" class="cl-2">
+                    <img src="controls_icon3.png" alt="" class="cl-3">
+                    <img src="controls_icon4.png" alt="" class="cl-4">
+                </div>
+                <div class="content-right">
+                    <img src="controls_icon5.png" alt="">
+                    <input type="range" min="0" max="100" class="p2" step="1">
+                </div>
+            </div>
 
-        <!--11-->
-        <div style="text-align: center;">
-            <button type="submit" height="20px" width="250px">Submit</button>
         </div>
-    </form>
-
+    </div>
+    </div>
 </body>
 
 </html>
