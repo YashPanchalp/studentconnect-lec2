@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 env:
   AWS_REGION: ap-south-1
-  S3_BUCKET: "studentconnect-vaibhav"
+  S3_BUCKET: "first-deployment-yash"
 
 permissions:
   contents: read
