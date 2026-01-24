@@ -1,20 +1,121 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>My S3 Static Website</title>
-  <style>
-    body {
-      font-family: Arial;
-      background-color: #0f172a;
-      color: white;
-      text-align: center;
-      padding-top: 100px;
-    }
-    h1 { color: #facc15; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
+<!--
+    1)COLLEGE INQUIRY FORM
+    2)ACPC IAMGE
+    3)FIRST NAME , LAST NAME
+    4)ACPC ID , PASSWORD
+    5)SELECT GENDER USING THE RADIO
+    6)SELECT CITY AND COLLEGE WITH SELECT DROP BOX
+    7)ASK WHAT YOU WANT TO ENQUIRE ABOUT SELECTED COLLEGE
+    8)SELECT HOW MANY COLLEGES YOU ENQIRE BEFIRE USING RANGE IP
+    9)GIVE TERMS AND CONDIOTONS AND CONTACT DETAILS
+    10)AGREED TO TERMS AND CONDITIONS CHECK BOX
+    11)FINAL SUBMIT BUTTON
+    -->
+
 <body>
-  <h1> Hello Experts ! Yash here - This is first static Website from AWS S3</h1>
-  <p>This static website is hosted on Amazon S3</p>
+    <!--1) and 2)START WITH TITLE -->
+    <form action="/action">
+        <div style="text-align: center;">
+            <div>
+                <h1>COLLEGE INQUIRY FORM FROM ACPC</h1>
+                <img src="images.jpg" alt="Acpc Logo" height="150px" width="150px">
+            </div>
+            <BR>
+
+            <!--3 and 4-->
+            <h4>ENTER YOUR PERSONAL DETAILS</h4>
+            <input type="text" name="f_name" placeholder="First Name">
+            <input type="text" name="l_name" placeholder="Last Name">
+            <input type="text" name="email" placeholder="Enter your Email">
+            <h4>USER ID AND PASSWORD</h4>
+            <input type="text" name="ACPC_id" placeholder="ACPC ID">
+            <input type="password" name="Pass" placeholder="Password"><br><br><br>
+
+            <!--5-->
+            <div>
+                <b>SELECT GENDER:</b>
+                <label for="Male">Male</label>
+                <input type="radio" name="Gender" id="Male" Value="Male">
+                <label for="Female">Female</label>
+                <input type="radio" name="Gender" id="Female" Value="Female">
+
+                <!--6-->
+                <b>&ThickSpace;City :</b>
+                <select name="State" id="State">
+                    <option>Select your City</option>
+                    <option value="ahm">Ahmedabad</option>
+                    <option value="sur">Surat</option>
+                    <option value="raj">Rajkot</option>
+                    <option value="vad">Others</option>
+                </select>
+                <br><br><br>
+            </div>
+            <span>
+                <b><u>College </u> :</b>
+                <select name="College" id="College">
+                    <option>Select your Collge to Enqire:</option>
+                    <option value="ld">LDCE Ahmedabad</option>
+                    <option value="vgec">VGEC Ahmedabad</option>
+                    <option value="ddu">DDU Nadiad</option>
+                    <option value="gecg">GEC Gandghinagar</option>
+                    <option value="smat">SMAT Surat</option>
+                </select>
+            </span><br><br>
+
+            <!--7-->
+            <div>
+                <label for="Extraa_info"></label>
+                <textarea name="Extraa_info" rows="3" cols="50" placeholder="What you want to enquire?"></textarea>
+            </div><br><br>
+
+            <!--8-->
+            <div>
+                <label for="clg_no"><b>How Many Colleges Inquired Before :</b></label>
+                <input type="range" name="College Count" id="clg_no" min="0" max="10" sep="1" value="0">
+            </div><br><br>
+        </div>
+        <!--9-->
+        <div>
+            <div style="text-align: center;">
+                <h4>*Terms and Conditionds*</h4>
+            </div>
+            <ul>
+                <li>The information provided will be used solely for responding to your inquiry and providing relevant
+                    details about our college, programs, and admission process.</li>
+                <li>By submitting the form, you confirm that all information provided is accurate and up-to-date.
+                    Providing false or misleading information may result in the rejection of your inquiry.</li>
+                <li>By submitting your contact details, you consent to being contacted by the college through email,
+                    phone,
+                    or other communication methods regarding your inquiry.</li>
+                <li>You may opt in to receive future updates, newsletters, and promotional content from the college on
+                    shared email. You can unsubscribe at any time by following the instructions provided in our
+                    communications.</li>
+                <li>For more Details visit :<a href="https://gujacpc.admissions.nic.in/home-8/be-b-tech/">Official
+                        Website</a></li>
+            </ul>
+        </div>
+
+        <!--10-->
+        <div style="text-align: center;">
+            <b>Are you agreed to Terms and Condtions?</b>
+            <label for="T&C">Yes !Contionue </label>
+            <input type="checkbox" name="T&C" checked>
+        </div><br>
+
+        <!--11-->
+        <div style="text-align: center;">
+            <button type="submit" height="20px" width="250px">Submit</button>
+        </div>
+    </form>
+
 </body>
+
 </html>
