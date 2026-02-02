@@ -1,20 +1,1853 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>My S3 Static Website</title>
-  <style>
-    body {
-      font-family: Arial;
-      background-color: #0f172a;
-      color: white;
-      text-align: center;
-      padding-top: 100px;
-    }
-    h1 { color: #facc15; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yash Panchal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="userAsset\user.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
 </head>
+<style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.container {
+  margin: 0 auto;
+  width: 1200px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  padding-top: 0;
+  position: fixed;
+  height: 3.5rem;
+  width: 120%;
+  background-color: white;
+  padding-bottom: 5rem;
+  z-index: 99;
+  left: -11.2rem;
+}
+
+.nav-items {
+  display: flex;
+  gap: 4.5rem;
+  margin: auto;
+  align-items: flex-end;
+  backdrop-filter: blur(20px);
+}
+
+.logo-container img {
+  height: 120px;
+  width: 300px;
+  left: -5px;
+  top: -10px;
+}
+
+.nav-items div {
+  font-size: 21px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  padding-bottom: 0.4rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+.nav-items div a {
+  color: rgb(12, 12, 12);
+}
+.nav-items div :hover {
+  text-decoration: underline 2px solid black;
+  text-underline-offset: 9.5px;
+  transform: scale(1.5);
+  transition: 1s;
+}
+
+.hero-section {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10rem;
+  margin: 4rem auto;
+  padding: 0 1rem;
+  padding-bottom: 8rem;
+  height: 100vh;
+}
+
+.faded-text {
+  justify-content: end;
+  user-select: none;
+  font-size: 6rem;
+  color: rgb(212, 205, 205);
+  transition: all 3s;
+  font-weight: bold;
+  margin-top: 39rem;
+  margin-left: 13rem;
+}
+
+.hero-section-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 3s;
+  gap: 14px;
+  margin-right: 5rem;
+  margin-top: 3rem;
+  padding-top: 5rem;
+  padding-bottom: 4.2rem;
+  border: 2px solid black;
+  border-radius: 2rem;
+}
+
+.hero-section-right {
+  width: 36%;
+  position: relative;
+  right: 10rem;
+  margin-top: 3rem;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  gap: 42px;
+  margin-left: 2rem;
+  position: absolute;
+  bottom: 2.2rem;
+  animation: zoom 5s infinite;
+}
+
+.icons img {
+  box-sizing: border-box;
+  backdrop-filter: blur(4px);
+  padding: 2px;
+  height: 40px;
+  width: 40px;
+  border-radius: 15%;
+}
+
+.i4 {
+  height: 40px;
+  width: 40px;
+}
+
+@keyframes zoom {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.068);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+/*main right user image*/
+.uimg {
+  height: 400px;
+  width: 350px;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  /* padding: 2rem; */
+  filter: grayscale(0.4);
+  transition: all 1s;
+  z-index: -1;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  /* background-color: rgb(212, 205, 205); */
+}
+
+@keyframes scaleimg {
+  0% {
+    filter: grayscale(0.4);
+    transform: scale(1);
+    box-shadow: 2px 2px 1px solid black;
+  }
+  50% {
+    filter: grayscale(0);
+    transform: scale(1.1);
+    box-shadow: 3px 5px 3px black;
+  }
+  100% {
+    transform: scale(1);
+    filter: grayscale(0.4);
+    box-shadow: 2px 2px 1px solid black;
+  }
+}
+
+.absoluate-icons {
+  position: relative;
+}
+
+.hero-section-heading {
+  font-size: 35px;
+  color: #343d68;
+  font-weight: 500;
+}
+
+.typewriter {
+  color: #3e34c0;
+  font-weight: 800;
+}
+
+.hero-section-sub-heading {
+  line-height: 45px;
+  font-size: 45px;
+}
+
+.hero-section-des {
+  margin-top: 1rem;
+  width: 75%;
+  font-weight: 500;
+  font-size: 19px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.btn-pink {
+  background-color: rgb(196, 76, 76);
+  color: aliceblue;
+  padding: 7px 20px;
+  box-shadow: 3px 3px 3px black;
+  z-index: 1;
+  position: relative;
+  font-size: large;
+  border: 2px solid rgb(196, 76, 76);
+}
+.btn-pink::before {
+  background-color: white;
+  content: "";
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: 0.8s;
+  z-index: -1;
+  position: absolute;
+}
+
+.btn-pink:hover::before {
+  transform: scaleX(1);
+}
+
+.btn-pink:hover {
+  color: rgb(196, 76, 76);
+  cursor: pointer;
+}
+
+#i {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+}
+
+.connect {
+  display: flex;
+  flex-direction: column;
+  width: 6rem;
+  margin-left: -21rem;
+  gap: 3rem;
+  margin-top: 2.5rem;
+  justify-content: center;
+  align-items: center;
+  padding: 2.5rem;
+}
+
+.cimg {
+  height: 3rem;
+  width: 3rem;
+}
+
+.cimg:hover {
+  cursor: pointer;
+}
+
+/* Typewriter effect 1 */
+@keyframes typing {
+  0.0000%,
+  27.3488% {
+    content: "";
+  }
+  1.1395%,
+  26.2093% {
+    content: "d";
+  }
+  2.2791%,
+  25.0698% {
+    content: "de";
+  }
+  3.4186%,
+  23.9302% {
+    content: "dev";
+  }
+  4.5581%,
+  22.7907% {
+    content: "deve";
+  }
+  5.6977%,
+  21.6512% {
+    content: "devel";
+  }
+  6.8372%,
+  20.5116% {
+    content: "develo";
+  }
+  7.9767%,
+  19.3721% {
+    content: "develop";
+  }
+  9.1163%,
+  18.2326% {
+    content: "develope";
+  }
+  10.2558%,
+  17.0930% {
+    content: "developer.";
+  }
+
+  30.7674%,
+  51.2791% {
+    content: "";
+  }
+  31.9070%,
+  50.1395% {
+    content: "s";
+  }
+  33.0465%,
+  49.0000% {
+    content: "st";
+  }
+  34.1860%,
+  47.8605% {
+    content: "stu";
+  }
+  35.3256%,
+  46.7209% {
+    content: "stud";
+  }
+  36.4651%,
+  45.5814% {
+    content: "stude";
+  }
+  37.6047%,
+  44.4419% {
+    content: "student.";
+  }
+
+  54.6977%,
+  75.2093% {
+    content: "";
+  }
+  55.8372%,
+  74.0698% {
+    content: "l";
+  }
+  56.9767%,
+  72.9302% {
+    content: "le";
+  }
+  58.1163%,
+  71.7907% {
+    content: "lea";
+  }
+  59.2558%,
+  70.6512% {
+    content: "lear";
+  }
+  60.3953%,
+  69.5116% {
+    content: "learn";
+  }
+  61.5349%,
+  68.3721% {
+    content: "learner.";
+  }
+
+  78.6279%,
+  96.8605% {
+    content: "";
+  }
+  79.7674%,
+  95.7209% {
+    content: "so";
+  }
+  80.9070%,
+  94.5814% {
+    content: "soft";
+  }
+  82.0465%,
+  93.4419% {
+    content: "software";
+  }
+  83.1860%,
+  92.3023% {
+    content: "software engi";
+  }
+  84.3256%,
+  91.1628% {
+    content: "software engineer.";
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.typewriter {
+  --caret: currentcolor;
+}
+
+.typewriter::before {
+  content: "";
+  animation: typing 13.5s infinite;
+}
+
+.typewriter::after {
+  content: "";
+  border-right: 1px solid var(--caret);
+  animation: blink 0.5s linear infinite;
+}
+
+.typewriter.thick::after {
+  border-right: 1ch solid var(--caret);
+}
+
+.typewriter.nocaret::after {
+  border-right: 0;
+}
+
+@media (prefers-reduced-motion) {
+  .typewriter::after {
+    animation: none;
+  }
+
+  @keyframes sequencePopup {
+    0%,
+    100% {
+      content: "developer";
+    }
+    25% {
+      content: "writer";
+    }
+    50% {
+      content: "reader";
+    }
+    75% {
+      content: "human";
+    }
+  }
+
+  .typewriter::before {
+    content: "developer";
+    animation: sequencePopup 15s linear infinite;
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+.hero-section-left {
+  position: relative;
+  z-index: 0;
+  width: 47rem;
+  height: 400px;
+  border-radius: 5px;
+  overflow: hidden;
+  padding: 5rem;
+  margin-left: -2rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -2;
+    left: -50%;
+    top: -50%;
+    width: 200%;
+    height: 200%;
+    background-color: #399953;
+    background-repeat: no-repeat;
+    background-size: 50% 50%, 50% 50%;
+    background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+    background-image: linear-gradient(#399953, #399953),
+      linear-gradient(#fbb300, #fbb300), linear-gradient(#d53e33, #d53e33),
+      linear-gradient(#377af5, #377af5);
+    animation: rotate 4s linear infinite;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 6px;
+    top: 6px;
+    width: calc(100% - 12px);
+    height: calc(100% - 12px);
+    background: white;
+    border-radius: 3.5px;
+    /* animation: opacityChange 3s infinite alternate; */
+  }
+}
+
+.project-section {
+  background-color: rgb(209, 192, 192);
+  margin-top: 4rem;
+}
+
+.page-header {
+  color: var(--bgOrange);
+  font-size: 90px;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.project {
+  background-color: rgb(212, 205, 205);
+}
+
+.project-container {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 0;
+  background-color: rgb(212, 205, 205);
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+}
+
+.project-card {
+  width: 90%;
+  height: 550px;
+  background-image: url(./projects/Project1.png);
+  background-size: cover;
+  /* background-repeat: no-repeat; */
+  position: relative;
+  box-shadow: 0px 0px 40px #1f1f1f;
+}
+
+.project-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #1f1f1f9a;
+  z-index: 0;
+  /* transform: scaleX(1); */
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, #343d68, #343d68be, #343d687c);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: all 0.4s;
+  z-index: 1;
+}
+
+.project-card:hover::before {
+  transform: scaleX(1);
+}
+
+.project-number {
+  position: absolute;
+  font-size: 200px;
+  font-weight: 600;
+  color: white;
+  z-index: 10;
+  /* display: none; */
+  opacity: 0;
+}
+
+.project-card:hover .project-number {
+  /* display: block; */
+  opacity: 1;
+}
+
+.project-number-right {
+  right: -40px;
+  top: -45px;
+}
+
+.project-number-left {
+  left: -40px;
+  top: -45px;
+}
+
+.project-content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  padding: 2em;
+  bottom: 20%;
+  z-index: 5;
+  gap: 1em;
+  transition: 0.4s;
+}
+
+.project-content-left {
+  left: 10%;
+}
+
+.project-content-right {
+  right: 10%;
+}
+
+.project-skills-container {
+  width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.project-skill {
+  width: 40px;
+}
+
+.project-heading {
+  font-size: 50px;
+  font-weight: bold;
+  line-height: 3rem;
+}
+
+.project-subHeading {
+  width: 70%;
+  font-size: 16px;
+  font-style: italic;
+}
+
+.btn-grp {
+  display: flex;
+  gap: 0.9rem;
+  align-items: center;
+}
+
+.btn-project:hover {
+  border: none;
+}
+
+.icon {
+  cursor: pointer;
+  color: white;
+  font-size: 35px;
+  transition: all 0.4s;
+}
+
+.icon:hover {
+  color: var(--bgOrange);
+}
+
+.project-card:hover .project-content {
+  transform: scale(1.1);
+}
+
+#project1 {
+  background-image: url(./projects/Project1.png) 0.6;
+}
+
+#project2 {
+  margin: 120px;
+  background-image: url(./projects/Project2.png);
+}
+
+#project3 {
+  background-image: url(./projects/Project3.png);
+}
+
+#project4 {
+  margin: 120px;
+  background-image: url(./projects/Project4.png);
+}
+
+@media (max-width: 1300px) {
+  .page-header {
+    padding-top: 30px;
+    color: var(--bgOrange);
+    text-align: center;
+    font-size: 40px;
+  }
+
+  .project-container {
+    padding: 5px;
+    margin: 10px;
+    gap: 60px;
+  }
+
+  .project-card {
+    width: 100%;
+    height: 300px;
+  }
+
+  .project-card {
+    background-size: cover;
+    background-position: center;
+  }
+
+  .project-content {
+    scale: 0.5;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+  }
+
+  .project-content-left {
+    left: 0;
+  }
+
+  .project-heading {
+    font-size: 40px;
+    width: 100%;
+  }
+
+  .project-subHeading {
+    width: 100%;
+  }
+
+  #project2 {
+    margin-left: 0;
+  }
+
+  #project4 {
+    margin-left: 0;
+  }
+
+  .project-skills-container {
+    width: 100%;
+  }
+
+  .project-skill {
+    width: 35px;
+  }
+
+  .project-card:hover .project-number {
+    display: none;
+  }
+
+  .project-card:hover .project-content {
+    scale: 0.55;
+  }
+}
+
+.skills-container {
+  position: relative;
+  display: flex;
+  padding: 5rem;
+  margin: 10rem auto;
+  gap: 30px;
+}
+
+.skill-container-left {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-container-right {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  position: relative;
+  justify-content: center;
+}
+
+.skill-fade-text {
+  font-size: 15em;
+  font-style: bold;
+  color: rgb(231, 231, 231);
+  bottom: -34.5%;
+  right: -25%;
+  user-select: none;
+  overflow: hidden;
+  position: absolute;
+}
+
+.blob-style {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: -5;
+  transform: translate(-50%, -50%);
+  animation: blobAnimate 3s linear infinite;
+}
+
+@keyframes blobAnimate {
+  50% {
+    top: 54%;
+    left: 56%;
+  }
+}
+
+.skills-logo {
+  width: 90px;
+  transition: all 0.5s;
+}
+
+.skills-logo:hover {
+  transform: scale(1.2);
+}
+
+.skill-heading {
+  color: var(--bgOrange);
+  font-size: 50px;
+  font-style: bold;
+  line-height: 50px;
+}
+
+.caps {
+  font-size: 90px;
+}
+
+.skill-subHeading {
+  margin-top: 1rem;
+  width: 85%;
+  text-align: justify;
+}
+
+.skill-subHeading p {
+  margin: 15px 0;
+}
+
+.contactus-form-container {
+  width: 100%;
+  background-color: rgb(231, 231, 231);
+}
+
+.contactus-heading {
+  font-size: 5em;
+  color: var(--bgOrange);
+  padding-top: 2rem;
+}
+
+.contactus-sub-heading {
+  font-size: 3rem;
+  color: #343d68aa;
+  text-transform: capitalize;
+}
+
+.contactus-form-container {
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 70%;
+  margin: 2rem 5rem;
+}
+
+.formfield-container {
+  width: 100%;
+}
+
+.formfield {
+  width: 100%;
+  height: 42px;
+  padding: 0 2rem;
+  font-size: 18px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 10px #1f1f1f;
+  font-weight: 500;
+  border: none;
+  margin-top: 27px;
+}
+
+.formfield-textarea {
+  height: auto;
+  padding-top: 1rem;
+}
+
+#submit-btn {
+  border: none;
+  font-size: 1.4rem;
+  margin: 1rem 0;
+}
+
+#submit-btn:hover {
+  scale: 0.9;
+}
+
+.submit-icon {
+  padding: 0 1rem;
+  font-size: 1.5rem;
+}
+
+.experience-container {
+  height: 1150px;
+  background-color: rgb(235, 227, 227);
+}
+:root {
+  --bgOrange: #e84949;
+}
+.ex-heading {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  padding-top: 5rem;
+  font-size: 3.5rem;
+}
+
+.experiece {
+  display: flex;
+  flex-direction: row;
+  height: 220px;
+  margin: auto;
+  background-color: white;
+  border: 0.2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 1.5rem;
+  width: 80%;
+  margin-top: 2rem;
+  margin-bottom: 0;
+  justify-content: center;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.ex-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ex-certi img {
+  height: 200px;
+  width: 200px;
+  margin-right: -15px;
+  margin-top: -15px;
+  border-radius: 10px;
+  border: 0.1px solid rgba(0, 0, 0, 0.2);
+}
+
+.ex-certi img:hover {
+  cursor: pointer;
+  transform: scale(170%);
+  transition: 1s;
+}
+
+.line1 {
+  display: flex;
+  flex-direction: row;
+}
+
+.line1 h4 {
+  color: gray;
+  font-size: 115%;
+}
+
+.line1 h3 {
+  font-size: 135%;
+  font-weight: 800;
+}
+
+.line2 {
+  font-weight: 600;
+  color: #535c87;
+  font-size: 115%;
+}
+
+.line3 {
+  font-weight: 300;
+}
+
+.ex-skills {
+  padding: 5px 10px;
+  border: none;
+  margin-right: 15px;
+  background-color: rgb(230, 223, 223);
+  border-radius: 10px;
+}
+#a h4 {
+  margin-left: 60%;
+}
+
+#b h4 {
+  margin-left: 48%;
+}
+
+#c h4 {
+  margin-left: 36%;
+}
+
+.certificate-container {
+  height: 1300px;
+  src: local("Segoe UI Bold");
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.certi-section1 {
+  display: flex;
+  flex-direction: row space-between;
+  margin: 4rem 5rem;
+  gap: 5rem;
+}
+
+.certi-section1 h4 {
+  font-size: 155%;
+  color: rgb(102, 94, 94);
+  margin-top: 1rem;
+  margin-left: 0.7rem;
+  font-weight: 700;
+}
+
+.certi-section1 h5 {
+  font-size: 120%;
+  color: gray;
+  font-weight: 400;
+  margin-left: 0.7rem;
+  margin-top: 0.6rem;
+}
+.certificate {
+  height: 390px;
+  width: 600px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  padding: 20px;
+  background-color: rgb(247, 240, 240);
+}
+
+.certi-name {
+  display: flex;
+  flex-direction: row;
+}
+
+.certi-des {
+  margin: 0.7rem;
+  margin-top: 1rem;
+  font-weight: 300;
+  font-size: 120%;
+}
+
+.certi-name h3 {
+  margin-top: 17px;
+  margin-left: 23px;
+  font-size: 130%;
+  font-weight: 600;
+}
+
+.certi-name img {
+  height: 60px;
+  width: 60px;
+}
+
+.microsoft {
+  position: relative;
+  overflow: hidden;
+  transition: 1s ease-in-out;
+}
+
+.microsoft::before {
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(certi/1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  z-index: 1;
+  transform-origin: left;
+  transition: 0.7s;
+  transform: scaleX(0);
+  position: absolute;
+}
+
+.microsoft:hover::before {
+  transform: scaleX(1);
+}
+
+.infosys {
+  position: relative;
+  overflow: hidden;
+}
+
+.infosys::before {
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(certi/2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  z-index: 1;
+  transform-origin: right;
+  transition: 0.7s;
+  transform: scaleX(0);
+  position: absolute;
+}
+
+.infosys:hover::before {
+  transform: scaleX(1);
+}
+
+.google {
+  position: relative;
+  overflow: hidden;
+}
+
+.google::before {
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(certi/3.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  z-index: 1;
+  transform-origin: left;
+  transition: 0.7s;
+  transform: scaleX(0);
+  position: absolute;
+}
+
+.google:hover::before {
+  transform: scaleX(1);
+}
+
+.ibm {
+  position: relative;
+  overflow: hidden;
+}
+
+.ibm::before {
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(exp/4.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  z-index: 1;
+  transform-origin: right;
+  transition: 0.7s;
+  transform: scaleX(0);
+  position: absolute;
+}
+
+.education {
+  background-color: rgb(231, 231, 231);
+  height: 1000px;
+}
+
+.edu {
+  display: flex;
+  flex-direction: row;
+  height: 220px;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  width: 55%;
+  background-color: white;
+  margin-top: 5rem;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.elogo:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.ld-1 {
+  margin-left: -20px;
+}
+.minor-1 {
+  margin-left: -80px;
+}
+
+.ld-2 {
+  margin-left: 50px;
+  align-items: space-between;
+}
+
+.ld-2 h2 {
+  font-size: 160%;
+  font-weight: 900;
+}
+
+.minor-2 h2 {
+  font-size: 160%;
+  font-weight: 900;
+}
+
+.ld-2 h3 {
+  font-size: 120%;
+  font-weight: 400;
+}
+
+.minor-2 h3 {
+  font-size: 120%;
+  font-weight: 400;
+}
+.ld-2 h4 {
+  font-size: 130%;
+  color: rgb(104, 96, 96);
+}
+
+.minor-2 h4 {
+  font-size: 130%;
+  color: rgb(104, 96, 96);
+}
+.minor-2 {
+  margin-left: 50px;
+}
+.elogo {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+}
+
+.ibm:hover::before {
+  transform: scaleX(1);
+}
+
+.down {
+  margin-top: 1.5rem;
+  transform: scale(1.2);
+  margin-right: 30px;
+}
+
+footer {
+  position: relative;
+  margin-top: -1px;
+  background-color: #343d68;
+  padding: 5rem;
+}
+
+.footer-wrapper {
+  display: flex;
+  gap: -1rem;
+  padding: 1.2rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-faded-text {
+  position: absolute;
+  left: 33%;
+  bottom: 0;
+  color: #535c87;
+  user-select: none;
+  font-size: 5em;
+}
+
+.link-wrapper {
+  display: flex;
+  gap: 2rem;
+  margin-top: -3rem;
+}
+
+.link-wrapper div a {
+  color: white;
+  text-decoration: none;
+  transition: all 0.6s;
+  font-size: 1.6rem;
+}
+
+.link-wrapper div a:hover {
+  color: var(--bgOrange);
+}
+
+.icon-wrapper {
+  display: flex;
+  gap: 1rem;
+}
+
+</style>
+
 <body>
-  <h1> Hello Experts! Yash here - My first static Website from AWS S3</h1>
-  <p>This static website is hosted on Amazon S3</p>
+
+    <!-- navbar// -->
+
+    <div class="wrapper">
+
+        <div class="container">
+
+            <div class="navbar">
+
+                <div class="nav-items">
+                    <h1 style="margin-top: 1.6rem;">PORTFOLIO</h1>
+                    <div><a href="#project">Projects</a></div>
+                    <div><a href="#skills">Skills</a></div>
+                    <div><a href="#exp">Experience</a></div>
+                    <div><a href="#certi">Certifications</a></div>
+                    <div><a href="#edu">Education</a></div>
+                    <div><a href="#contact">Contact me</a></div>
+                </div>
+
+            </div>
+
+            <div class="hero-section">
+
+                <div class="hero-section-left">
+
+                    <div class="hero-section-heading">
+                        <h2>Hello! from Yash</h2>
+                    </div>
+                    <div class="hero-section-heading hero-section-sub-heading">
+                        I am a <span class="typewriter"></span>
+                    </div>
+                    <div class="hero-section-des">
+                        I am a software devloper and here is my portfolio, click on Hire me to show my resume and
+                        journey towards devlopment.
+                        <br>
+                        <br>
+                    </div>
+
+                    <div class="hireme-btn">
+                        <button class="btn-pink">Hire me</button>
+
+                    </div>
+                </div>
+
+                <div class="hero-section-right">
+                    <div class="user-img"></div><img src="images\hero-section-left\main.jpg" class="uimg" alt="imf">
+                    <!-- <div class="icons">
+                        <img src="images\hero-section-left\programming.png" class="iimg" alt="">
+                        <img src="images\hero-section-left\coding.png" class="iimg" alt="">
+                        <img src="images\hero-section-left\java-script.png" class="iimg" alt="">
+                        <img src="images\hero-section-left\java.png" class="iimg">
+                    </div> -->
+                </div>
+                <div class="connect">
+                    <a href="https://www.linkedin.com/in/yash-panchal-ldce-it/"><img src="images\hero-section-left\linkedin.png " class="cimg m1" alt=""></a>
+                    <a href="https://github.com/YashPanchalp"><img src="images\hero-section-left\github.png" class="cimg m2" alt=""></a>
+                    <a href="https://leetcode.com/u/YashPanchal7706/"><img src="images\hero-section-left\leetcode.webp" class="cimg m4" alt=""></a>
+                    <a href="https://www.instagram.com/yash_776_?igsh=MXA0YmdmaHFnaXdicg=="> <img src="images\hero-section-left\insta.png" class="cimg m3" alt=""></a>
+                </div>
+
+            </div>
+        </div>
+
+        <br><br><br><br><br>
+        
+        <div class="faded-text">
+
+        </div>
+
+
+        <div class="project">
+            <a name="project"></a>
+            <div class="project-container">
+                <div class="page2">
+                    <h2 class="page-header">Projects</a></h2>
+
+                </div>
+                <div class="project-card" id="project1">
+                    <div class="project-number project-number-right">01</div>
+                    <div class="project-content project-content-left">
+
+                        <div class="project-skills-container">
+                            <img class="project-skill" src="./stack/HTML.png" alt="" />
+                            <img class="project-skill" src="./stack/CSS.png" alt="" />
+                            <img class="project-skill" src="./stack/Tailwind.png" alt="" />
+                            <img class="project-skill" src="./stack/Vercel.svg" alt="" />
+                        </div>
+
+                        <h2 class="project-heading">Spotify Website Clone</h2>
+                        <p class="project-subHeading">
+                            A perfect UI clone of Spotify website including all the sections and animations
+                            Website to explore various music albums and songs.
+                        </p>
+                        <div class="btn-grp">
+                            <a href="https://github.com/YashPanchalp/Fronted-Projects/tree/main/1%20-%20Spotify%20Clone"><button class="btn-pink btn-project">Github Link</button></a>
+                            <a>
+                                <i title="GitHubLink" class="fa-brands fa-github icon"></i>
+                            </a>
+                            <a>
+                                <i title="Live Link" class="fa-solid fa-link icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" id="project2">
+                    <div class="project-number project-number-left">02</div>
+                    <div class="project-content project-content-right">
+
+                        <div class="project-skills-container">
+                            <img class="project-skill" src="./stack/HTML.png" alt="" />
+                            <img class="project-skill" src="./stack/CSS.png" alt="" />
+                            <img class="project-skill" src="./stack/Tailwind.png" alt="" />
+                            <img class="project-skill" src="./stack/Redux.svg" alt="" />
+                            <img class="project-skill" src="./stack/Vercel.svg" alt="" />
+                        </div>
+
+                        <h2 class="project-heading">Razorpay Payments - Clone</h2>
+                        <p class="project-subHeading">
+                            Perfect UI clone of the RazorPay website using the Tailwind CSS.
+                            It includes all the hover animations and transtition effects.
+                        </p>
+                        <div class="btn-grp">
+                            <a href="https://github.com/YashPanchalp/Fronted-Projects/tree/main/5%20-%20Razorapay%20Clone"><button class="btn-pink btn-project">Github Link</button></a>
+                            <a>
+                                <i title="GitHubLink" class="fa-brands fa-github icon"></i>
+                            </a>
+                            <a>
+                                <i title="Live Link" class="fa-solid fa-link icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" id="project3">
+                    <div class="project-number project-number-right">03</div>
+                    <div class="project-content project-content-left">
+
+                        <div class="project-skills-container">
+                            <img class="project-skill" src="./stack/HTML.png" alt="" />
+                            <img class="project-skill" src="./stack/CSS.png" alt="" />
+                            <img class="project-skill" src="./stack/Javascript.svg" alt="" />
+                            <img class="project-skill" src="./stack/Tailwind.png" alt="" />
+                            <img class="project-skill" src="./stack/Vercel.svg" alt="" />
+                        </div>
+
+                        <h2 class="project-heading">Text Translator App</h2>
+                        <p class="project-subHeading">
+                            A Designed Web App by React to Translate text from English to the other languages like : Hindi , Gujrati , French , Spanish , German and Japanes.
+                        </p>
+                        <div class="btn-grp">
+                            <a href="https://github.com/YashPanchalp/Fronted-Projects/tree/main/a-14-Text%20Translator%20App(Basic%20React)"><button class="btn-pink btn-project">Github Link</button></a>
+                            <a>
+                                <i title="GitHubLink" class="fa-brands fa-github icon"></i>
+                            </a>
+                            <a>
+                                <i title="Live Link" class="fa-solid fa-link icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" id="project4">
+                    <div class="project-number project-number-left">04</div>
+                    <div class="project-content project-content-right">
+
+                        <div class="project-skills-container">
+                            <img class="project-skill" src="./stack/HTML.png" alt="" />
+                            <img class="project-skill" src="./stack/CSS.png" alt="" />
+                            <img class="project-skill" src="./stack/Javascript.svg" alt="" />
+                            <img class="project-skill" src="./stack/NextJsCircle.png" alt="" />
+                            <img class="project-skill" src="./stack/Tailwind.png" alt="" />
+                            <img class="project-skill" src="./stack/Vercel.svg" alt="" />
+                        </div>
+
+                        <h2 class="project-heading">Movies Review App</h2>
+                        <p class="project-subHeading">
+                            Movies Review Website using React with Concept of React Forms includes:
+-Username -Remarks -Ratings
+                        </p>
+                        <div class="btn-grp">
+                            <a href="https://github.com/YashPanchalp/Fronted-Projects/tree/main/a-18-Movies%20Review%20Form%20-%20(React%20Form)"><button class="btn-pink btn-project">Github Link</button></a>
+                            <a>
+                                <i title="GitHubLink" class="fa-brands fa-github icon"></i>
+                            </a>
+                            <a>
+                                <i title="Live Link" class="fa-solid fa-link icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="skills" class="container skills-container">
+        <a name="skills"></a>
+        <div class="skill-container-left">
+            <h2 class="skill-heading">
+                <span class="caps">M</span>e and
+                <br />
+                MyTech Stack
+            </h2>
+
+            <div class="skill-subHeading">
+                <p>
+                    I am a motivated and detail-oriented software developer with hands-on experience in Frontend Development, specializing in HTML, CSS, JavaScript, Tailwind CSS, Bootstrap, and React. I enjoy building responsive, user-centric interfaces and translating design concepts into clean, maintainable code.
+
+I have a strong foundation in Data Structures and Algorithms using Java, which has enhanced my problem-solving abilities and logical thinking. In addition, I am proficient in Python programming, with experience applying it in academic and practical scenarios.
+                </p>
+
+                <p>
+                    II am familiar with Backend Development fundamentals and have worked on multiple academic and personal projects, giving me exposure to end-to-end application development and core full-stack concepts.
+
+I have also completed the Google Cloud Cohort Program, where I gained foundational knowledge of cloud computing, including cloud services, deployment concepts, and modern development workflows.
+
+With a passion for continuous learning, I focus on writing efficient code, improving software quality, and building scalable solutions. I am eager to apply my skills in real-world environments and grow as a full-stack software developer.
+                </p>
+
+            </div>
+        </div>
+
+        <div class="skill-container-right">
+            <img src="./userAsset/blob vector.png" class="blob-style" alt="" />
+
+            <img src="./stack/HTML.png" class="skills-logo" />
+            <img src="./stack/CSS.png" class="skills-logo" />
+            <img src="./stack/Javascript.svg" class="skills-logo" />
+            <img src="./stack/React.png" class="skills-logo" />
+            <img src="./stack/NodeJs.svg" class="skills-logo" />
+            <img src="./stack/Next.svg" class="skills-logo" />
+            <img src="./stack/Redux.svg" class="skills-logo" />
+            <img src="./stack/Tailwind.png" class="skills-logo" />
+            <img src="./stack/Bootstrap.svg" class="skills-logo" />
+            <img src="./stack/MaterialUI.svg" class="skills-logo" />
+            <img src="./stack/Express.png" class="skills-logo" />
+            <img src="./stack/Git.svg" class="skills-logo" />
+            <img src="./stack/Github.svg" class="skills-logo" />
+            <img src="./stack/Graphql.svg" class="skills-logo" />
+            <img src="./stack/MongoDB.svg" class="skills-logo" />
+            <img src="./stack/Vercel.svg" class="skills-logo" />
+            <img src="./stack/ChartJs.svg" class="skills-logo" />
+            <img src="./stack/Bash.svg" class="skills-logo" />
+            <img src="./stack/Docker.svg" class="skills-logo" />
+            <img src="./stack/K8s.svg" class="skills-logo" />
+        </div>
+
+
+    </div>
+    <a name="exp"></a>
+    <div class="experience-container">
+
+        <h2 class="ex-heading">Professional Experience</h2>
+
+        
+        <div class="experiece">
+            <div class="ex-content">
+                <div class="line1" id="b">
+                    <h3>Full Stack Web Devlopment - Internship</h3>
+                    <h4>Nov 2025 - Jan 2026</h4>
+                </div>
+                <div class="line2">Amdox Technologies </div>
+                <div class="line3">
+                    <p>Working on modern web development projects using React.js, Tailwind CSS, and other front-end tools.
+                       As well as backend tools like NodeJS , ExpressJS and MongoDB . Collaborating with the development team to deliver responsive and scalable web solutions. </p>
+                    <br>
+                    <button class="ex-skills">React</button>
+                    <button class="ex-skills">Tailwind</button>
+                    <button class="ex-skills">NodeJS</button>
+                    <button class="ex-skills">MongoDB</button>
+                </div>
+            </div>
+            <div class="ex-certi">
+                <img src="exp\2.jpg" alt="">
+            </div>
+        </div>
+        <div class="experiece">
+            <div class="ex-content">
+                <div class="line1" id="c">
+                    <h3>Frontend Devloper - React Intern &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  </h3>
+                    <h4>Oct 2025 - Nov 2025</h4>
+                </div>
+                <div class="line2">CODEXINTERN</div>
+                <div class="line3">
+                    <p> Built and deployed 3 React-based projects: Text Translator App, Password Generator App, and Modern Website (Tailwind Magic).
+Gained hands-on experience with React.js, Tailwind CSS, React Router DOM, Axios, RapidAPI, and Three.js.
+ Focused on component-based design, state management, and creating responsive, user-friendly UI.
+
+                    </p>
+                    <br>
+                    <button class="ex-skills">HTML</button>
+                    <button class="ex-skills">CSS</button>
+                    <button class="ex-skills">JavaScript</button>
+                    <button class="ex-skills">ReactJS</button>
+                </div>
+            </div>
+            <div class="ex-certi">
+                <img src="exp\3.jpg" alt="">
+            </div>
+        </div>
+        <div class="experiece">
+            <div class="ex-content">
+                <div class="line1" id="a">
+                    <h3>Web Devloper Intern</h3>
+                    <h4> &nbsp;  &nbsp;  &nbsp;  July 2025 - Sept 2025</h4>
+                </div>
+                <div class="line2">Alcronix Solutions</div>
+                <div class="line3">
+                    <p>Build Real world projects like Online Learning Platorm - that includes secure user authentication
+                        , course managment and user managment. Real Time Chat Applcation - offers instant messaging with
+                        secure user authentication, real time updates and multichannel acessibility.</p>
+                    <br>
+                    <button class="ex-skills">HTML CSS JS</button>
+                    <button class="ex-skills">React</button>
+                    <button class="ex-skills">NextJS ExpessJS</button>
+                    <button class="ex-skills">MongoDB</button>
+                </div>
+            </div>
+            <div class="ex-certi">
+                <img src="exp\1.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <a name="certi"></a>
+    <div class="certificate-container">
+
+        <h2 class="ex-heading">Certifications</h2>
+
+        <div class="certi-section1">
+            <div class="microsoft certificate">
+                <div class="certi-name">
+                    <img src="certi\microsoft.png" alt="">
+                    <h3>Carrier Essentials in Generative AI</h3>
+                </div>
+
+                <h4>Microsoft</h4>
+                <h5>Issued : Jul 2024</h5>
+                <div class="certi-des">
+                    <p> Introduction to generative AI—covering theory, tools (especially Microsoft Copilot), ethical
+                        frameworks, prompt engineering, and real-world applications—in a structured, beginner-friendly
+                        online format. Ideal for anyone aiming to leverage AI in their career.</p>
+                    <button class="ex-skills down">Gen Ai</button>
+                    <button class="ex-skills down">Microsoft Copilot</button>
+                    <button class="ex-skills down">Artificial Intelligence</button>
+                </div>
+            </div>
+            <div class="infosys certificate infosys">
+                <div class="certi-name">
+                    <img src="certi\infosys.png" alt="">
+                    <h3>Data Structures and Algorithms using Java</h3>
+                </div>
+
+                <h4>Infosys</h4>
+                <h5>Issued : Jun 2025</h5>
+                <div class="certi-des">
+                    <p>Fundamentals of Java programming, including arrays, linked lists, stacks, queues, trees, and
+                        graphs.
+                        You'll explore key algorithms like sorting, searching, recursion, and dynamic programming. The
+                        course also teaches time and space complexity analysis.
+                    </p>
+                    <button class="ex-skills down">Java</button>
+                    <button class="ex-skills down">Data Structures</button>
+                </div>
+            </div>
+        </div>
+        <div class="certi-section1">
+            <div class="certificate google">
+                <div class="certi-name">
+                    <img src="certi\download.png" alt="">
+                    <h3>Generative AI Exchange Program 2025</h3>
+                </div>
+
+                <h4>Google</h4>
+                <h5>Issued : Jul 2025</h5>
+                <div class="certi-des">
+                    <p>Google Cloud’s Gemini and Imagen models—and build production-ready GenAI applications using
+                        Vertex
+                        AI, Streamlit, and the Gemini API. You’ll master prompt design, multimodal document
+                        understanding,
+                        and Retrieval‑Augmented Generation workflows.</p>
+                    <button class="ex-skills down">Prompt Engineering</button>
+                    <button class="ex-skills down">Google Gemini</button>
+                    <button class="ex-skills down">Vertex Ai</button>
+                </div>
+
+            </div>
+            <div class="ibm certificate">
+                <div class="certi-name ibm">
+                    <img src="certi\ibm.png" alt="">
+                    <h3>Python 101 for Data Science</h3>
+                </div>
+
+                <h4>IBM</h4>
+                <h5>Issued : Nov 2024</h5>
+                <div class="certi-des">
+                    <p>Python basics: variables, data types, expressions, strings; work with core data structures like
+                        lists, tuples, dictionaries, and sets. Dive into programming fundamentals—conditions, loops,
+                        functions, exception handling, object‑oriented programming—then I/O, Pandas, and basic NumPy.
+                    </p>
+                    <button class="ex-skills down">Python</button>
+                    <button class="ex-skills down">Data Science</button>
+                    <button class="ex-skills down">Numpy</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <a name="edu"></a>
+
+    <div class="education">
+
+        <h2 class="ex-heading">Education</h2>
+        <div class="edu ld">
+            <div class="ld-1">
+                <img src="edu/ldce-logo.png" class="elogo" alt="">
+            </div>
+            <div class="ld-2">
+                <h2>L D COLLEGE OF ENGINEERING</h2>
+                <br>
+                <h3>Bachlore's of Engineering(BE) - Information Tehnology</h3>
+                <br>
+                <h4>Jun 2023 - Nov 2027</h4>
+            </div>
+        </div>
+        <div class="edu minor">
+            <div class="minor-1">
+                <img src="edu/gtu.png" class="elogo" alt="">
+            </div>
+            <div class="minor-2">
+                <h2>GTU x Infosys Springboard</h2>
+                <br>
+                <h3>Minors in Generative AI and Machine Learning</h3>
+                <br>
+                <h4>Jan 2025 - Aug 2027 </h4>
+            </div>
+        </div>
+    </div>
+
+    <a name="contact"></a>
+
+
+    <div class="contactus-form-container" id="contactme">
+
+        <div class="container">
+
+            <h1 class="contactus-heading">Contact me</h1>
+
+            <h3 class="contactus-sub-heading">
+                Questions, thoughts, or just want to say hello?
+            </h3>
+
+
+            <div class="contactus-form-container">
+                <form class="form" action="">
+                    <div class="formfield-container">
+                        <input class="formfield" type="text" name="name" id="" placeholder="Enter your name" />
+
+                        <input class="formfield" type="email" name="email" id=""
+                            placeholder="Enter your email address" />
+
+                        <input class="formfield" type="text" name="subject" id="" placeholder="Enter your subject" />
+
+                        <textarea name="message" id="" cols="30" rows="10" class="formfield formfield-textarea"
+                            placeholder="Enter your message"></textarea>
+
+                    </div>
+
+                    <div>
+                        <button type="submit" class="btn-pink" id="submit-btn">
+                            Send Message<i class="submit-icon fa-solid fa-paper-plane"></i>
+                        </button>
+                    </div>
+
+                </form>
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="container">
+            <div class="footer-wrapper"
+                style="display: flex; margin: auto; justify-content: center; align-items: center;">
+                <div class="footer-faded-text">Yash Panchal</div>
+
+                <div class="link-wrapper">
+                    <div>
+                        <a href="#project">Projects</a>
+                    </div>
+                    |
+                    <div>
+                        <a href="#skills">Skills</a>
+                    </div>
+                    |
+
+                    <div>
+                        <a href="#exp">
+                            Experience
+                        </a>
+                    </div>
+                    |
+                    <div>
+                        <a href="#certi">Certifications</a>
+                    </div>
+                    |
+                    <div>
+                        <a href="edu">Education</a>
+                    </div>
+                    |
+                    <div>
+                        <a href="#contact">Contact Me</a>
+                    </div>
+                </div>
+                
+             
+
+            </div>
+        </div>
+    </footer>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://kit.fontawesome.com/58a810656e.js" crossorigin="anonymous"></script>
+    <script>
+        var typeData = new Typed(".role", {
+            strings: [
+                "Full Stack Developer",
+                "Web Developer",
+                "UI-UX Designer",
+                "Backend Developer",
+                "Coder",
+            ],
+            loop: true,
+            typeSpeed: 100,
+            backSpeed: 80,
+            backDelay: 1000,
+        });
+    </script>
+
 </body>
+
 </html>
