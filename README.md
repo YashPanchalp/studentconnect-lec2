@@ -11,7 +11,7 @@ AWS S3 (static website)
 
 GitHub Pages 
 
-Here is the Assigment of the Task: Create portfolio site (student's profile, educational updates, certifications etc) and deploy it via github actions
+Assigment of the Session2: Create portfolio site (student's profile, educational updates, certifications etc) and deploy it via github actions
 
 URL : https://first-deployment-yash.s3.eu-north-1.amazonaws.com/index.html#project
 
