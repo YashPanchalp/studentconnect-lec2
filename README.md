@@ -13,6 +13,8 @@ GitHub Pages
 
 Assigment of the Session2: Create portfolio site (student's profile, educational updates, certifications etc) and deploy it via github actions
 
+Deployed all files in Repo to the created bucket.
+
 URL : https://first-deployment-yash.s3.eu-north-1.amazonaws.com/index.html#project
 
 <img width="1897" height="887" alt="Screenshot 2026-02-02 161502" src="https://github.com/user-attachments/assets/2f96832c-c923-4b1f-8bd8-cd7351210b69" />
